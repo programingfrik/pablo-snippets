@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# contributor: Pablo Mercader Alcantara <programingfrik@gmail.com>
+# name: create-table-oracle
+# key: crtaor
+# expand-env: ((yas/indent-line 'fixed))
+# --
+create table $1(
+    id number(6),
+    ${2:campo tipo default 0 not null}
+);
+$0

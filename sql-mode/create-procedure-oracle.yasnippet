@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# contributor: Pablo Mercader Alcantara <programingfrik@gmail.com>
+# name: create-procedure-oracle
+# key: crpror
+# expand-env: ((yas/indent-line 'fixed))
+# --
+create or replace procedure ${1:nombre}
+(
+    ${2:parametro tipo,}
+)
+as
+    valor_retorno tipo;
+    nombre_excepcion exception;
+begin
+    $0
+exception
+
+end $1;
+

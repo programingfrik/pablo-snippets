@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# contributor: Pablo Mercader Alcántara <programingfrik@gmail.com>
+# name: prueba
+# key: prueba
+# expand-env: ((yas/indent-lines 'fixed))
+# --
+using System;
+
+/// <summary>
+///   La clase $1 que sirve pa' saludar a ed-mundo!!
+/// </summary>
+public class ${1:Prueba}
+{
+    public static void Main(String[] args)
+    {
+        System.Console.WriteLine("Hola ed-mundo!");
+        $0
+    }
+}
+
+// Local Variables:
+// compile-command: "mcs /t:exe /out:${2:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}.exe $2.cs && ./$2.exe"
+// End:

@@ -1,0 +1,22 @@
+# -*- mode: snippet -*-
+# contributor: Pablo Mercader Alcantara <programingfrik@gmail.com>
+# name: create-function-ms
+# key: crfnms
+# expand-env: ((yas/indent-line 'fixed))
+# --
+if object_id('${1:nombre}') is not null
+begin
+    drop function $1
+end
+go
+create function [dbo].[$1]
+(
+    ${2:@parametro tipo,}
+)
+returns ${3:int}
+as
+begin
+    $0
+    return 0
+end;
+go

@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# contributor: Pablo Mercader Alcantara <programingfrik@gmail.com>
+# name: create-function-mysql
+# key: crfnmy
+# expand-env: ((yas/indent-line 'fixed))
+# --
+drop function if exists ${1:nombre};
+delimiter //
+create function $1
+(
+    ${2:parametro tipo,}
+)
+returns ${3:varchar}
+begin
+    $0
+end//
+delimiter ;

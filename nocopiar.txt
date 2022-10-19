@@ -4,3 +4,4 @@ copiar-a-emacs.sh
 .git
 LICENSE
 *~
+empacar.sh
