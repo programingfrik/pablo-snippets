@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# contributor: Pablo Mercader Alcantara <programingfrik@gmail.com>
+# name: create-procedure-ms
+# key: crprms
+# expand-env: ((yas/indent-line 'fixed))
+# --
+if object_id('${1:nombre}') is not null
+begin
+    drop procedure $1
+end
+go
+create procedure [dbo].[$1]
+    ${2:@parametro tipo,}
+as
+begin
+    $0
+end
+go

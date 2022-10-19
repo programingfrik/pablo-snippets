@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# contributor: Pablo Mercader Alcantara <programingfrik@gmail.com>
+# name: create-procedure-mysql
+# key: crprmy
+# expand-env: ((yas/indent-line 'fixed))
+# --
+drop procedure if exists ${1:nombre};
+delimiter //
+create procedure $1
+(
+    ${2:parametro tipo,}
+)
+begin
+    $0
+end//
+delimiter ;
