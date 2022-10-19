@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# contributor: Pablo Mercader Alcántara <programingfrik@gmail.com>
+# name: create-table-ms
+# key: crtams
+# expand-env: ((yas/indent-line 'fixed))
+# --
+if object_id('${1:nombre}') is not null
+begin
+    drop table $1
+end
+go
+create table [dbo].[$1] (
+    ${2:[id] int identity primary key,
+    ${3:[campo] tipo not null}
+)
+go
+$0

@@ -1,0 +1,6 @@
+nocopiar.txt
+README.md
+copiar-a-emacs.sh
+.git
+LICENSE
+*~
