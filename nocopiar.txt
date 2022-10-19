@@ -2,7 +2,9 @@ nocopiar.txt
 README.md
 copiar-a-emacs.sh
 .git
+.git/*
 LICENSE
 *~
 empacar.sh
 .gitignore
+pablo-snippets.zip
