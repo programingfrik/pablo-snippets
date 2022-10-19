@@ -5,3 +5,4 @@ copiar-a-emacs.sh
 LICENSE
 *~
 empacar.sh
+.gitignore
