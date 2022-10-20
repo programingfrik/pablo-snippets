@@ -1,0 +1,17 @@
+# -*- mode: snippet; coding: utf-8 -*-
+# contributor: Pablo Mercader Alcántara <programingfrik@gmail.com>
+# name: list-columns-ms
+# key: licoms
+# expand-env: ((yas/indent-line 'fixed))
+# --
+select
+    substring(table_name, 0, 50) tabla,
+    substring(column_name, 0, 40) columna,
+    substring(data_type, 0, 13) tipo,
+    character_octet_length tamano,
+    is_nullable permite_null
+from information_schema.columns
+where (table_catalog = '${1:base-datos}')
+    and (table_name = '${2:tabla}')
+order by table_catalog, table_name
+go$0

@@ -1,0 +1,14 @@
+# -*- mode: snippet; coding: utf-8 -*-
+# contributor: Pablo Mercader Alcántara <programingfrik@gmail.com>
+# name: list-objects-ms
+# key: liobms
+# expand-env: ((yas/indent-line 'fixed))
+# --
+select
+    substring(us.name + '.' + ob.name, 0, 50) objeto,
+    ob.type tipo
+from sysobjects ob
+left join sysusers us on (ob.uid = us.uid)
+where (ob.type in ('U', 'V', 'P'))
+order by ob.type, ob.name
+go$0
