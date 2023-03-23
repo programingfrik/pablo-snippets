@@ -4,8 +4,8 @@
 # key: crtamy
 # expand-env: ((yas/indent-line 'fixed))
 # --
-drop table if exists ${1:nombre};
-create table $1(
+drop table if exists `${1:nombre}`;
+create table `$1`(
     id int primary key auto_increment,
     ${2:campo tipo default 0 not null}
 );

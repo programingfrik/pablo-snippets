@@ -7,7 +7,7 @@
 
 if object_id('${1:nombre}') in not null
 begin
-    drop view $1
+    drop view [$1]
 end
 go
 create view [dbo].[$1] as
@@ -15,6 +15,6 @@ create view [dbo].[$1] as
         campo1,
         campo2,
         campo3
-    from tabla1 t1
-    inner join tabla2 t2 on t1.campo = t2.campo
+    from [tabla1] t1
+    inner join [tabla2] t2 on t1.campo = t2.campo
 go

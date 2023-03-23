@@ -6,7 +6,7 @@
 # --
 if object_id('${1:nombre}') is not null
 begin
-    drop procedure $1
+    drop procedure [$1]
 end
 go
 create procedure [dbo].[$1]
