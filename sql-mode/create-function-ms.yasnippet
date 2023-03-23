@@ -6,7 +6,7 @@
 # --
 if object_id('${1:nombre}') is not null
 begin
-    drop function $1
+    drop function [$1]
 end
 go
 create function [dbo].[$1]

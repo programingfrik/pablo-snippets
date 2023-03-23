@@ -4,9 +4,9 @@
 # key: crfnmy
 # expand-env: ((yas/indent-line 'fixed))
 # --
-drop function if exists ${1:nombre};
+drop function if exists `${1:nombre}`;
 delimiter //
-create function $1
+create function `$1`
 (
     ${2:parametro tipo,}
 )

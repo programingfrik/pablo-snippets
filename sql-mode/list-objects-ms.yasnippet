@@ -5,7 +5,7 @@
 # expand-env: ((yas/indent-line 'fixed))
 # --
 select
-    substring(us.name + '.' + ob.name, 0, 50) objeto,
+    (us.name + '.' + ob.name) objeto,
     ob.type tipo
 from sysobjects ob
 left join sysusers us on (ob.uid = us.uid)

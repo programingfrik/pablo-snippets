@@ -6,7 +6,7 @@
 # --
 if object_id('${1:nombre}') is not null
 begin
-    drop table $1
+    drop table [$1]
 end
 go
 create table [dbo].[$1] (

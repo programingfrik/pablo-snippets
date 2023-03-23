@@ -4,9 +4,9 @@
 # key: crprmy
 # expand-env: ((yas/indent-line 'fixed))
 # --
-drop procedure if exists ${1:nombre};
+drop procedure if exists `${1:nombre}`;
 delimiter //
-create procedure $1
+create procedure `$1`
 (
     ${2:parametro tipo,}
 )
