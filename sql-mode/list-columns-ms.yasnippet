@@ -5,10 +5,10 @@
 # expand-env: ((yas/indent-line 'fixed))
 # --
 select
-    substring(table_name, 0, 50) tabla,
-    substring(column_name, 0, 40) columna,
-    substring(data_type, 0, 13) tipo,
-    character_octet_length tamano,
+    table_name tabla,
+    column_name columna,
+    data_type tipo,
+    character_octet_length tamanoBytes,
     is_nullable permite_null
 from information_schema.columns
 where (table_catalog = '${1:base-datos}')
