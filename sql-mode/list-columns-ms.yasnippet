@@ -7,7 +7,7 @@
 select
     column_name columna,
     data_type tipo,
-    character_octet_length tamano,
+    character_octet_length bytes,
     is_nullable permite_null
 from information_schema.columns
 where (table_catalog = '${1:base-datos}')
