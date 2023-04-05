@@ -5,10 +5,9 @@
 # expand-env: ((yas/indent-line 'fixed))
 # --
 select
-    (us.name + '.' + ob.name) objeto,
-    ob.type tipo
-from sysobjects ob
-left join sysusers us on (ob.uid = us.uid)
+    (sc.name + '.' + ob.name) objeto,
+    ob.type
+from sys.objects ob
+inner join  sys.schemas sc on ob.schema_id = sc.schema_id
 where (ob.type in ('U', 'V', 'P'))
-order by ob.type, ob.name
 go$0
