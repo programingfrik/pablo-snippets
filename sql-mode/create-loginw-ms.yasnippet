@@ -1,0 +1,16 @@
+# -*- mode: snippet; coding: utf-8 -*-
+# contributor: Pablo Mercader Alcántara <programingfrik@gmail.com>
+# name: create-loginw-ms
+# key: crlwms
+# expand-env: ((yas/indent-line 'fixed))
+# --
+use master
+go
+
+if not exists (select name from master.sys.server_principals
+    where name = '${1:DOMINIO\User}')
+begin
+    create login [$1] from windows, default_database = ${2:database}
+end
+go
+$0
