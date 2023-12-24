@@ -5,12 +5,11 @@
 # expand-env: ((yas/indent-line 'fixed))
 # --
 select
-    column_name columna,
-    data_type tipo,
-    character_octet_length bytes,
-    is_nullable permite_null
-from information_schema.columns
-where (table_catalog = '${1:base-datos}')
-    and (table_name = '${2:tabla}')
-order by table_catalog, table_name
+    COLUMN_NAME columna,
+    DATA_TYPE tipo,
+    CHARACTER_OCTET_LENGTH bytes,
+    IS_NULLABLE anulable
+from INFORMATION_SCHEMA.COLUMNS
+where (TABLE_SCHEMA + '.' + TABLE_NAME = '${1:dbo.tabla}')
+order by TABLE_SCHEMA, TABLE_NAME
 go$0

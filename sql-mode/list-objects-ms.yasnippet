@@ -5,10 +5,13 @@
 # expand-env: ((yas/indent-line 'fixed))
 # --
 select
-    (sc.name + '.' + ob.name) objeto,
-    ob.type
-from sys.objects ob
-inner join  sys.schemas sc on ob.schema_id = sc.schema_id
-where (ob.type in ('U', 'V', 'P'))
-order by ob.type, sc.name, ob.name
+    (TABLE_SCHEMA + '.' + TABLE_NAME) objeto,
+    TABLE_TYPE tipo
+from INFORMATION_SCHEMA.TABLES
+union all
+select
+    (SPECIFIC_SCHEMA + '.' + ROUTINE_NAME) objeto,
+    ROUTINE_TYPE tipo
+from INFORMATION_SCHEMA.ROUTINES
+order by tipo, objeto
 go$0
