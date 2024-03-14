@@ -1,0 +1,7 @@
+# Maneja los finales de lineas automaticamente para ficheros
+# detectados como texto y deja todos los otros detectados como
+# binarios sin tocar.
+* text=auto
+
+# Nunca cambiar el fin de lineas para los shell scripts
+*.sh -crlf
