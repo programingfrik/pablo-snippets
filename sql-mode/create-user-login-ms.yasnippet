@@ -1,0 +1,28 @@
+# -*- mode: snippet; coding: utf-8 -*-
+# contributor: Pablo Mercader Alcántara <programingfrik@gmail.com>
+# name: create-user-login-ms
+# key: crulms
+# expand-env: ((yas/indent-line 'fixed))
+# --
+use master
+go
+
+if not exists (select name from master.sys.server_principals
+    where name = '${1:usuario}')
+begin
+    create login $1 with password = '${2:password}', default_database = ${3:basedatos}, check_expiration = off, check_policy = off;
+end
+go
+
+use $3
+go
+
+if not exists (select name from sys.database_principals
+    where (type = 'S') and (name = '$1'))
+begin
+    create user $1 from login $1
+
+    -- grant select on tabla to $1;
+
+end
+go
