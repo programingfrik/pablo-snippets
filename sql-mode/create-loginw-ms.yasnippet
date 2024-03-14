@@ -12,5 +12,4 @@ if not exists (select name from master.sys.server_principals
 begin
     create login [$1] from windows, default_database = ${2:database}
 end
-go
-$0
+go$0
