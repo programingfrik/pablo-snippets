@@ -4,4 +4,4 @@
 * text=auto
 
 # Nunca cambiar el fin de lineas para los shell scripts
-*.sh -crlf
+*.sh text eol=lf
