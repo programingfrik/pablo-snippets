@@ -10,6 +10,6 @@ go
 if not exists (select name from master.sys.server_principals
     where name = '${1:DOMINIO\User}')
 begin
-    create login [$1] from windows, default_database = ${2:database}
+    create login [$1] from windows with default_database = [${2:database}]
 end
 go$0
