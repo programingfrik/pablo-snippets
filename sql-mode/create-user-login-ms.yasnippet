@@ -10,7 +10,7 @@ go
 if not exists (select name from master.sys.server_principals
     where name = '${1:usuario}')
 begin
-    create login $1 with password = '${2:password}', default_database = ${3:basedatos}, check_expiration = off, check_policy = off;
+    create login [$1] with password = '${2:password}', default_database = [${3:basedatos}], check_expiration = off, check_policy = off;
 end
 go
 
@@ -20,9 +20,18 @@ go
 if not exists (select name from sys.database_principals
     where (type = 'S') and (name = '$1'))
 begin
-    create user $1 from login $1
+    create user [$1] from login [$1]
 
-    -- grant select on tabla to $1;
+    -- exec sp_addrolemember @rolename = 'db_datareader', @membername = '$1'
+    -- exec sp_addrolemember @rolename = 'db_datawriter', @membername = '$1'
+    -- exec sp_addrolemember @rolename = 'db_sql_dba', @membername = '$1'
+    -- exec sp_addrolemember @rolename = 'db_sql_reader', @membername = '$1'
+    -- exec sp_addrolemember @rolename = 'db_sql_developer', @membername = '$1'
 
+    -- grant select on tabla to [$1];
+
+    -- grant execute on $3.dbo.procedure1 to [$1];
+
+    -- grant execute on $3.dbo.procedure2 to [$1];
 end
 go$0

@@ -7,19 +7,21 @@
 use ${1:database}
 go
 
-if not exists (select name from master.sys.database_principals
+if not exists (select name from sys.database_principals
     where (type = 'S') and (name = '${2:user}'))
 begin
-    create user $2 from login $2
+    create user [$2] from login [$2]
 
-    exec sp_addrolemember @rolename = 'db_datareader', @membername = '$2'
-    exec sp_addrolemember @rolename = 'db_datawriter', @membername = '$2'
-    exec sp_addrolemember @rolename = 'db_sql_dba', @membername = '$2'
-    exec sp_addrolemember @rolename = 'db_sql_reader', @membername = '$2'
-    exec sp_addrolemember @rolename = 'db_sql_developer', @membername = '$2'
+    -- exec sp_addrolemember @rolename = 'db_datareader', @membername = '$2'
+    -- exec sp_addrolemember @rolename = 'db_datawriter', @membername = '$2'
+    -- exec sp_addrolemember @rolename = 'db_sql_dba', @membername = '$2'
+    -- exec sp_addrolemember @rolename = 'db_sql_reader', @membername = '$2'
+    -- exec sp_addrolemember @rolename = 'db_sql_developer', @membername = '$2'
 
-    grant execute on $1.dbo.procedure1 to $2;
+    -- grant select on tabla to [$1];
 
-    grant execute on $1.dbo.procedure2 to $2;
+    -- grant execute on $1.dbo.procedure1 to [$2];
+
+    -- grant execute on $1.dbo.procedure2 to [$2];
 end
 go$0
