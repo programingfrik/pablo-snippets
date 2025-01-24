@@ -7,4 +7,5 @@ LICENSE
 *~
 empacar.sh
 .gitignore
+.gitattributes
 pablo-snippets.zip
