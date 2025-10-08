@@ -1,0 +1,10 @@
+# -*- mode: snippet; coding: utf-8 -*-
+# contributor: Pablo Mercader Alcántara <programingfrik@gmail.com>
+# name: list-dbsize-ms
+# key: lidzms
+# expand-env: ((yas/indent-line 'fixed))
+# --
+select bda.name bdatos, fic.name, fic.physical_name, fic.state_desc, fic.size
+from sys.master_files fic
+inner join sys.databases bda on fic.database_id = bda.database_id
+go$0

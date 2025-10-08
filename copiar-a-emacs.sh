@@ -4,4 +4,6 @@
 
 # Este script asume que está siendo ejecutado desde el directorio raíz del proyecto.
 
+# TODO: Como obtener la ruta actual en la que se encuentra este script
+
 rsync -truv --exclude-from=nocopiar.txt ./ ~/.emacs.d/snippets

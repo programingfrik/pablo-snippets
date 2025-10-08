@@ -1,0 +1,11 @@
+# -*- mode: snippet; coding: utf-8 -*-
+# contributor: Pablo Mercader Alcántara <programingfrik@gmail.com>
+# name: restore-database-ms
+# key: redams
+# expand-env: ((yas/indent-line 'fixed))
+# --
+restore database ${1:Eikon_Brrd} from disk = '${2:e:\Backups Eikon\Eikon_Brrd}${3:_2025-10-08}.bak' with
+move '${4:Eikon_NEWBD_Data}' to '${5:e:\ms-sql-server\\}data\\$1$3.mdf',
+move '${6:Eikon_NEWBD_Log}' to '$5logs\\$1_log$3.ldf',
+move '${7:Eikon_Brrd_1_Log}' to '$5logs\\$1_log2$3.ldf'
+go$0
