@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Dado el comando con el que fue ejecutado el script $0 busca la ruta
+# del directorio del proyecto
+dirpro=`echo $0 | sed "s/\(.\+\)\?poneren/\1/"`
+
+# Si dirpro está vacio porque el comando fue ejecutado desde el
+# diretorio mismo del proyecto, pon una referencia explicita al
+# directorio actual para que en los sitios que se usa dirpro como
+# parámetro no quede vacios.
+if [[ $dirpro = "" ]] then
+   dirpro="./"
+fi
+
+case $1 in
+    (emacsd)
+        rsync -truv --exclude-from=${dirpro}nocopiar.txt ${dirpro} ~/.emacs.d/snippets
+    ;;
+    (paquete)
+        actual=$(pwd)
+        cd $dirpro
+        zip -r -x@nocopiar.txt ${actual}/pablo-snippets.zip ./
+        cd $actual
+    ;;
+esac
