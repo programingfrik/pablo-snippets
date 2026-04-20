@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# contributor: Pablo Mercader Alcántara <programingfrik@gmail.com>
+# name: TkMessageBox
+# key: tkmsgbox
+# --
+messagebox.${1:$$(yas-choose-value '("showinfo" "showwarning" "showerror" "askquestion" "askokcancel" "askretrycancel" "askyesno" "askyesnocancel"))}(message = "${2:Error no se encontró el fichero}", detail = "${3:El fichero, parece estar extraviado actualmente}", title = "${4:Hubo un error}", icon = ${5:$$(yas-choose-value '("messagebox.ERROR" "messagebox.INFO" "messagebox.QUESTION" "messagebox.WARNING"))}, default = ${6:$$(yas-choose-value '("messagebox.ABORT" "messagebox.RETRY" "messagebox.IGNORE" "messagebox.OK" "messagebox.CANCEL" "messagebox.YES" "messagebox.NO"))}, parent = $7)
+$0
