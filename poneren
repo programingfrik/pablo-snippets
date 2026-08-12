@@ -8,7 +8,7 @@ dirpro=`echo $0 | sed "s/\(.\+\)\?poneren/\1/"`
 # diretorio mismo del proyecto, pon una referencia explicita al
 # directorio actual para que en los sitios que se usa dirpro como
 # parámetro no quede vacios.
-if [[ $dirpro = "" ]] then
+if [[ $dirpro = "" ]]; then
    dirpro="./"
 fi
 
