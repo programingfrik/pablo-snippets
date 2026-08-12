@@ -5,3 +5,4 @@
 
 # Nunca cambiar el fin de lineas para los shell scripts
 *.sh text eol=lf
+poneren text eol=lf
